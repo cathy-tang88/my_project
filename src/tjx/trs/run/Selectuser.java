@@ -53,5 +53,6 @@ public class Selectuser {
 			sb.append(entry.getKey()+"\t"+entry.getValue()) ;
 			sb.append("\n") ;
 		}
+		IOUtil.Writer("data/word_freq.txt", "UTF-8", sb.toString()) ;
 	}
 }
