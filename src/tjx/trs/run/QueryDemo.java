@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.nio.file.Files;
 
 import love.cq.domain.Forest;
 import love.cq.library.Library;
@@ -42,9 +41,12 @@ public class QueryDemo {
 			forest = Library.makeForest("data/csdn_class.txt");
 		}
 		GetWord gw = new GetWord(forest, query);
-		String temp = null;
-		while ((temp = gw.getFrontWords()) != null) {
-			return true;
+		int size = 0 ;
+		while ((gw.getFrontWords()) != null) {
+			size ++ ;
+		}
+		if(size==2){
+			return true ;
 		}
 		return false;
 	}
