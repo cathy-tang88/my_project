@@ -30,7 +30,7 @@ public class QueryDemo {
 			String temp = null;
 
 			while ((temp = reader.readLine()) != null) {
-				String[] split = temp.split("\t");
+				String[] split = temp.toLowerCase().split("\t");
 				if (filter(split[2])) {
 					fos.write(temp.getBytes());
 					fos.write("\n".getBytes());
