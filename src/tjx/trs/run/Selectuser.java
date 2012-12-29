@@ -16,11 +16,11 @@ public class Selectuser {
 		while ((temp = reader.readLine()) != null) {
 			String[] split = temp.split("\t");
 			String id=split[1];
-			
+			String queryString=split[2];
 			if(tagHashMap.containsKey(id))
 			{
 				HashMap<String,Integer> hasMap=tagHashMap.get(id);
-				String queryString=split[2];
+				
 				if(hasMap.containsKey(queryString)){
 				hasMap.put(queryString, hasMap.get(queryString)+1);
 				}
@@ -31,11 +31,17 @@ public class Selectuser {
 			}
 			else{
 				HashMap<String , Integer> noMap=new HashMap<String, Integer>();
-				
+				if(noMap.containsKey(queryString)){
+					noMap.put(queryString, noMap.get(queryString)+1);
+					}
+					else{
+						noMap.put(queryString, 1);
+					}
 				tagHashMap.put(id, noMap);
 			}
 			
 		}
+		
 		System.out.println(tagHashMap);
 	}
 }
