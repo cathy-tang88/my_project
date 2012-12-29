@@ -1,19 +1,15 @@
 package tjx.trs.run;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
-
-import org.ansj.util.CollectionUtil;
 
 import love.cq.domain.Forest;
 import love.cq.library.Library;
 import love.cq.splitWord.GetWord;
 import love.cq.util.IOUtil;
+import tjx.trs.util.CollectionUtil;
 
 public class Selectuser {
 	public static void main(String[] args) throws Exception {
@@ -55,4 +51,5 @@ public class Selectuser {
 		}
 		IOUtil.Writer("data/word_freq.txt", "UTF-8", sb.toString()) ;
 	}
+	
 }
