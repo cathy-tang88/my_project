@@ -7052,7 +7052,7 @@ linux学习之路	5
 edittext	5
 hla	5
 libjingle	5
-Ｃ＃	5
+ｃ＃	5
 短信开发	5
 rss技术	5
 c#.net技术	5
@@ -7712,43 +7712,43 @@ isa	4
 应用商店	201
 phone	143
 云服务	115
-CEO	111
+ceo	111
 漏洞	111
 app store	102
 iphone os	97
 创富	92
-IT	87
+it	87
 ie9	78
 云安全	69
 拉手网	67
 超级计算机	64
-CTO	64
+cto	64
 裁员	59
 电子书阅读器	59
 中移动	58
 开放	57
-Bambook	56
+bambook	56
 趋势	56
 施密特	56
 社交	55
 平板	55
-Studio	53
+studio	53
 360手机卫士	53
 用户	51
 乐phone	50
 社交游戏	50
 社交网站	49
-Visual	49
+visual	49
 云计算大会	44
 apc	44
 移动广告	43
 金蝶友商网	43
-Windows Mobi	41
-PHPWind	41
+windows mobi	41
+phpwind	41
 人大金仓	41
 运营商	40
 离职	40
-MAP平台	39
+map平台	39
 foundry	38
 novell	38
 开发者说	37
@@ -7756,33 +7756,33 @@ novell	38
 2009	36
 瑞星	35
 周鸿祎	35
-Channel9	34
+channel9	34
 authenticati	34
 market	34
 上市	33
 博客精选	33
 58同城	33
-WP	32
+wp	32
 上网本	32
-CES	31
+ces	31
 开发人员	31
 ipod touch	30
 云平台	29
-IDF	29
+idf	29
 中小企业	29
 隐私	29
 盖茨	29
 普巴软件	28
 aol	28
-AT&T	28
+at&t	28
 索尼爱立信	27
 程序达人赛	27
 火狐	27
 李彦宏	27
-4G	27
+4g	27
 ovi	27
-WM	26
-CIO	26
+wm	26
+cio	26
 爱立信	26
 回顾	26
 360安全卫士	26
@@ -7804,7 +7804,7 @@ lg	22
 documentatio	22
 cocoachina	22
 安全漏洞	22
-Unity大会	21
+unity大会	21
 竞争	21
 360浏览器	21
 moto	21
@@ -7820,7 +7820,7 @@ mcafee	19
 云应用	19
 设计师	19
 刀片	19
-Android应用	19
+android应用	19
 工信部	19
 垄断	18
 佩奇	18
@@ -7828,11 +7828,11 @@ Android应用	19
 托管	18
 升级	18
 tv	18
-Moblin	18
+moblin	18
 营收	18
 维基	18
 原创	18
-CSGS2011	18
+csgs2011	18
 工程师	18
 zune	18
 美团网	18
@@ -7857,13 +7857,13 @@ wave	16
 版本	16
 ssd	16
 mvp	16
-TechCrunch	16
-普巴软件、OA	16
-Q+	16
+techcrunch	16
+普巴软件、oa	16
+q+	16
 热文	16
 转型	15
 尼尔森	15
-ChromeOS	15
+chromeos	15
 atom	15
 中企动力	15
 xmlhttpreque	15
@@ -7871,15 +7871,15 @@ xmlhttpreque	15
 出售	15
 rc	15
 蒋涛	15
-Developer	15
+developer	15
 用友软件	15
-Hyper-V	15
+hyper-v	15
 总编观察	15
 用友畅捷通	15
 square	15
 媒体	15
 电商	15
-CSGS2012	15
+csgs2012	15
 僵尸网络	15
 2012云世界大会	15
 金蝶中间件	15
@@ -7887,25 +7887,25 @@ CSGS2012	15
 市场份额	15
 开发者星球	15
 市值	15
-T-Mobile	15
-LTE	14
-iOS应用	14
+t-mobile	15
+lte	14
+ios应用	14
 虚拟	14
 cdma	14
-Hulu	14
+hulu	14
 周报	14
 连线	14
 搜狐	14
 东南融通	14
 企业级	14
-Coremail	14
-微软，Windows	14
+coremail	14
+微软，windows	14
 color	14
 wgdc	14
 华天动力	14
 labs	13
-Pro	13
-Droid	13
+pro	13
+droid	13
 buzz	13
 下载量	13
 成本	13
@@ -7919,7 +7919,7 @@ windowsmobil	13
 起诉	13
 syscan	13
 player	13
-Red	13
+red	13
 调查	13
 手机安全	13
 维基解密	13
@@ -7928,36 +7928,36 @@ Red	13
 孙东风	12
 sparc	12
 kvm	12
-C语言	12
+c语言	12
 应用程序商店	12
 挑战	12
 transformati	12
 东方通	12
 年会	12
-TUP大会	12
+tup大会	12
 nook	12
-HSA	12
+hsa	12
 alpha	12
 hat	12
 联发科	12
-Mango	12
+mango	12
 新功能	12
 开发商	12
 用友医疗	12
 北信源	12
 并购	12
 盗版	12
-VS	12
+vs	12
 奇虎	12
 实录	12
 东软	12
 垃圾邮件	12
 孵化器	12
-World	12
+world	12
 科技公司	12
 fire	11
 泄露	11
-CNZZ	11
+cnzz	11
 anonymous	11
 gnome	11
 语音云	11
@@ -7965,15 +7965,15 @@ gnome	11
 赶集网	11
 支付	11
 故障	11
-adSage	11
+adsage	11
 移动商务	11
-iOS设备	11
-OA	11
+ios设备	11
+oa	11
 辞职	11
 2011云计算大会	11
 reader	11
 river	11
-MM	11
+mm	11
 三网融合	11
 中程在线	11
 微服务器	11
@@ -7993,7 +7993,7 @@ ipad2	11
 产品与设计	10
 社交媒体	10
 团购网	10
-UC浏览器	10
+uc浏览器	10
 jazz	10
 跳槽	10
 重组	10
@@ -8002,11 +8002,11 @@ authorizatio	10
 外包	10
 admob	10
 webmatrix	10
-iBookstore	10
+ibookstore	10
 淘宝网	10
 ie8	10
 one	10
-CSDN微峰会	10
+csdn微峰会	10
 open	10
 开源云平台	10
 4.5	10
@@ -8016,7 +8016,7 @@ open	10
 第九城市	10
 电子邮件	10
 云视点	10
-EA	10
+ea	10
 李艾科	10
 kde	10
 巴茨	10
@@ -8027,40 +8027,40 @@ kde	10
 移动营销	10
 sd2.0	10
 sp1	10
-APP营销、百分通联	10
+app营销、百分通联	10
 增长	10
 节能	10
-FCC	9
+fcc	9
 研讨会	9
 软件工程师	9
 软件营销	9
 谷歌中国	9
 团购网站	9
-pp St	9
+pp st	9
 移动搜索	9
 物流信息化	9
 技术转型	9
 金山毒霸	9
-Radware	9
+radware	9
 大众点评	9
 流量	9
 销量	9
-iPad应用	9
-FBI	9
+ipad应用	9
+fbi	9
 设备	9
 中国市场	9
-pp Store	9
+pp store	9
 收入	9
 应用与技术	9
-GSMA	9
+gsma	9
 知识产权	9
 u9	9
 北电	9
 tegra	9
-Forrester	9
+forrester	9
 voice	9
-Salesforce.c	9
-CLIQ	9
+salesforce.c	9
+cliq	9
 drive	9
 公共云	9
 ieee	9
@@ -8079,31 +8079,31 @@ wolfram	9
 桌面虚拟化	9
 搜狗浏览器	9
 开发者大会	9
-TD-LTE	9
+td-lte	9
 云音乐	9
 中标	9
 印度	9
 财富	9
-TOP30+	9
+top30+	9
 digg	9
 张欣	9
-Imagine	9
+imagine	9
 高德软件	9
 利润	9
 digital	8
 九城	8
 网龙	8
-ITC	8
+itc	8
 sprint	8
-Cup	8
+cup	8
 豆瓣	8
 默多克	8
 易传媒	8
-John	8
+john	8
 热闻	8
 苹果开发者大会	8
 超算	8
-IT规划	8
+it规划	8
 刀片服务器	8
 张朝阳	8
 网秦	8
@@ -8114,24 +8114,24 @@ iphone4	8
 在线商店	8
 建议	8
 收费	8
-Kin	8
+kin	8
 创新大赛	8
 移动电子商务	8
 s3	8
-FTC	8
+ftc	8
 更新	8
-iOS平台	8
+ios平台	8
 入侵	8
 大型机	8
 终端管理	8
-Sandy	8
-Limua	8
+sandy	8
+limua	8
 面部识别	8
 王文京	8
 应用开发者	8
-DeNA	8
-B&N	8
-IT运维	8
+dena	8
+b&n	8
+it运维	8
 风投	8
 iphone应用	8
 生态系统	8
@@ -8142,42 +8142,42 @@ iphone应用	8
 人民搜索	8
 51.com	8
 授权	8
-China	8
+china	8
 3gs	8
 mint	8
-Websense	8
+websense	8
 android平台	8
 份额	8
 董事长	8
-CFO	8
+cfo	8
 比赛	8
 异构	8
-BIM	8
+bim	8
 图吧	8
 信息技术峰会	8
 分拆	8
-SD大会	7
+sd大会	7
 全面预算	7
 人大金仓、数据库	7
 365	7
 innovate2012	7
 推出	7
-Juniper	7
+juniper	7
 和解	7
-COO	7
-CC视频	7
+coo	7
+cc视频	7
 serializatio	7
 杨元庆	7
 乐视网	7
 bridge	7
 绩效管理	7
-AppUp	7
+appup	7
 达内	7
 webm	7
 微处理器	7
 淘宝无线	7
 提供	7
-YiGo语言	7
+yigo语言	7
 应用推广	7
 估值	7
 flipboard	7
@@ -8189,28 +8189,28 @@ comscore	7
 platform	7
 第三方	7
 全新	7
-Tilera	7
+tilera	7
 凡客	7
 360手机安全	7
-LivingSocial	7
-Nexus O	7
+livingsocial	7
+nexus o	7
 dr	7
 ca	7
-OA系统	7
+oa系统	7
 语音搜索	7
 布林	7
 时代	7
 全球研发中心	7
-Wind	7
+wind	7
 2345网址导航	7
-PTC	7
+ptc	7
 新岸线	7
 排行	7
 张宏江	7
 playstation	7
 小米手机	7
-Pwn2Own	7
-4S	7
+pwn2own	7
+4s	7
 软博会	7
 发展趋势	7
 云游戏	7
@@ -8292,14 +8292,14 @@ powerbuilder软件	14
 房地产网	14
 程序崩溃	13
 prim	13
-Android游戏	13
+android游戏	13
 sort	13
 属性	13
 event	13
 linux内核部件分析	13
 fragment	13
 插入排序	12
-iOS开发	12
+ios开发	12
 const	12
 expandablelistview	12
 示例	12
@@ -8320,7 +8320,7 @@ aspose	11
 stack	11
 单例	11
 明星娱乐资讯报道	11
-Web前端	11
+web前端	11
 湛江酷房网	11
 leetcode	11
 智能视频分析	11
@@ -8377,7 +8377,7 @@ linux 设备驱动	9
 d3d11	9
 内部类	9
 硬加密	9
-iPhone开发	9
+iphone开发	9
 构造函数	9
 基础教程	9
 循环	9
@@ -8399,7 +8399,7 @@ stringbuffer	9
 sharedpreferences	9
 s5pv210 uboot移植	9
 test	9
-UTF-8	9
+utf-8	9
 路径	9
 synchronized	9
 选择排序	9
@@ -8470,137 +8470,137 @@ aqlsever	7
 广播	7
 textview	7
 光生电压
-ActiveX技术
-ActiveX控件
-ActiveX组件
-Agent系统
-Alpha通道
-ARX应用程序
-ASP模式
-ASP网页
-ATA接口
-AT总线
-Bezier曲线
-BIOS芯片
-Bode图
-BP模型
-BP神经网络
-BP神经网络模型
-B样条
-C3I系统
-CAD技术
-CAD电子文件
-CAE软件
-CAI系统
-CAI课件
-CAN总线
-CAPP系统
-CCD照相机
-CGI应用程序
-CGI程序
-CMOS设置
-COM对象
-COM接口
-COM组件
-CRM系统
-DBF文件
-DDE服务器
-DIS系统
-DMA技术
-DoS攻击
-EDI技术
-ERP技术
-ERP软件
-ERP项目
-ER模型
-FTP服务器
-Gabor变换
-GPIB仪器
-Hamming距离
-Hausdorff距离
-Hermite插值
-HLA系统
-Hopfield网络
-Hough变换
-HTML文档
-HTML语言
-IDE接口
-IDE硬盘
-Internet应用
-IP地址
-ISA总线
-IT基础设施
-IT战略
-IT技术
-IT系统
-Java小程序
-Java程序
-Java虚拟机
-Java语言
-JDBC驱动程序
-Julia集
-Kohonen网络
-Lipschitz指数
-LonTalk协议
-LonWorks技术
-Lyapunov函数
-L系统
-Markov链
-MATLAB语言
-MIB变量
-Modem卡
-MP3随身听
-MSComm控件
-M文件
-M矩阵
-NP完全
-NP完全问题
-NP问题
-NURBS曲面
-ODBC接口
-ODBC数据库
-ODBC数据源
-ODBC驱动程序
-OEM产品
-OLE对象
-OLE技术
-OLE控件
-OLE自动化
-PCA方法
-PCI桥
-PC服务器
-Pearson相关系数
-Petri网
-PID控制算法
-POP3服务器
-P网络
-RBF网络
-RISC芯片
-SCSI接口
-SMTP服务器
-SQL服务器
-STL文件
-S函数
-S曲线
-S结构
-Timer控件
-TSP问题
-USB接口
-USB设备
-VR技术
-VR系统
-Web应用
-Web应用系统
-Web挖掘
-Web数据
-Web数据库
-Web文档
-Web服务
-Web服务器
-Web浏览器
-Web网页
-Web资源
-WWW服务器
+activex技术
+activex控件
+activex组件
+agent系统
+alpha通道
+arx应用程序
+asp模式
+asp网页
+ata接口
+at总线
+bezier曲线
+bios芯片
+bode图
+bp模型
+bp神经网络
+bp神经网络模型
+b样条
+c3i系统
+cad技术
+cad电子文件
+cae软件
+cai系统
+cai课件
+can总线
+capp系统
+ccd照相机
+cgi应用程序
+cgi程序
+cmos设置
+com对象
+com接口
+com组件
+crm系统
+dbf文件
+dde服务器
+dis系统
+dma技术
+dos攻击
+edi技术
+erp技术
+erp软件
+erp项目
+er模型
+ftp服务器
+gabor变换
+gpib仪器
+hamming距离
+hausdorff距离
+hermite插值
+hla系统
+hopfield网络
+hough变换
+html文档
+html语言
+ide接口
+ide硬盘
+internet应用
+ip地址
+isa总线
+it基础设施
+it战略
+it技术
+it系统
+java小程序
+java程序
+java虚拟机
+java语言
+jdbc驱动程序
+julia集
+kohonen网络
+lipschitz指数
+lontalk协议
+lonworks技术
+lyapunov函数
+l系统
+markov链
+matlab语言
+mib变量
+modem卡
+mp3随身听
+mscomm控件
+m文件
+m矩阵
+np完全
+np完全问题
+np问题
+nurbs曲面
+odbc接口
+odbc数据库
+odbc数据源
+odbc驱动程序
+oem产品
+ole对象
+ole技术
+ole控件
+ole自动化
+pca方法
+pci桥
+pc服务器
+pearson相关系数
+petri网
+pid控制算法
+pop3服务器
+p网络
+rbf网络
+risc芯片
+scsi接口
+smtp服务器
+sql服务器
+stl文件
+s函数
+s曲线
+s结构
+timer控件
+tsp问题
+usb接口
+usb设备
+vr技术
+vr系统
+web应用
+web应用系统
+web挖掘
+web数据
+web数据库
+web文档
+web服务
+web服务器
+web浏览器
+web网页
+web资源
+www服务器
 一体化结构
 一体机
 一把手工程
@@ -8619,7 +8619,7 @@ WWW服务器
 三层结构
 三层网络
 三弯矩方程
-三次B样条
+三次b样条
 三次握手
 三级网络
 三维体数据
@@ -9751,7 +9751,7 @@ WWW服务器
 参考轨迹
 参考集
 参量空间
-双口RAM
+双口ram
 双向同步
 双向细目表
 双因素
@@ -9765,7 +9765,7 @@ WWW服务器
 双核心
 双模式
 双端口
-双端口RAM
+双端口ram
 双系统
 双线性插值
 双缓冲
@@ -9840,7 +9840,7 @@ WWW服务器
 同步点
 名字空间
 名称空间
-后PC时代
+后pc时代
 后勤学
 后台处理
 后台打印
@@ -10141,7 +10141,7 @@ WWW服务器
 外部设备
 外部设计
 外部过程
-多Agent系统
+多agent系统
 多主体
 多任务
 多任务处理
@@ -10157,7 +10157,7 @@ WWW服务器
 多处伤
 多处理器系统
 多处理机系统
-多媒体CAI系统
+多媒体cai系统
 多媒体个人计算机
 多媒体产品
 多媒体作品
@@ -10547,7 +10547,7 @@ WWW服务器
 嵌入型
 嵌入对象
 嵌入式
-嵌入式Linux
+嵌入式linux
 嵌入式应用
 嵌入式微处理器
 嵌入式微控制器
@@ -10589,7 +10589,7 @@ WWW服务器
 工序质量控制
 工控机系统
 工时定额
-工程CAD
+工程cad
 工程数据
 工程数据库
 工程数据管理
@@ -11420,7 +11420,7 @@ WWW服务器
 普通文件
 景观植物
 景象匹配
-智能Agent
+智能agent
 智能主体
 智能交通
 智能交通系统
@@ -12144,7 +12144,7 @@ WWW服务器
 生物识别技术
 生长因子和细胞因子
 用例图
-用户ID
+用户id
 用户事件
 用户任务
 用户信息
@@ -12456,7 +12456,7 @@ WWW服务器
 积分分离
 积木式
 积极防御
-移动Agent
+移动agent
 移动代理系统
 移动代码
 移动商务
@@ -13540,7 +13540,7 @@ WWW服务器
 轮廓线
 轮廓跟踪
 软中断
-软件Agent
+软件agent
 软件与硬件
 软件产业
 软件产品质量
@@ -13947,7 +13947,7 @@ WWW服务器
 闪存盘
 闪速存储器
 闭合力
-闭环MRP
+闭环mrp
 问题域
 问题处理系统
 问题库
@@ -14028,7 +14028,7 @@ WWW服务器
 霍尔集成电路
 露水夫妻
 静压作用
-静态IP地址
+静态ip地址
 静态信息
 静态分析
 静态分配
@@ -14193,49 +14193,49 @@ WWW服务器
 黑色星期五
 默认值
 齐次坐标
-ＩＣ卡
-AC算法
-ADOCE
-ANCC系统
-Apriori性质
-ASON技术
-AS路径
-BI系统
-CIO机制
-CyberRail
-ERPll
-Honeypot
-IPO抑价
-IPSAN
-IP回溯
-IP地址伪装
-IT治理
-JTAG技术
-minimumCORBA
-Overlay网络
-PCIExpress
-SAN文件系统
-SHOPPINGMALL
-USB主机控制器
-VANOS
-VisualBasic编辑器
+ｉｃ卡
+ac算法
+adoce
+ancc系统
+apriori性质
+ason技术
+as路径
+bi系统
+cio机制
+cyberrail
+erpll
+honeypot
+ipo抑价
+ipsan
+ip回溯
+ip地址伪装
+it治理
+jtag技术
+minimumcorba
+overlay网络
+pciexpress
+san文件系统
+shoppingmall
+usb主机控制器
+vanos
+visualbasic编辑器
 webquest
-Web内容挖掘
-XMLWebServices
-XML数据挖掘
-XML文档树
+web内容挖掘
+xmlwebservices
+xml数据挖掘
+xml文档树
 三维运动估计
 中间件层
 人脸表情识别
 令牌桶算法
-企业级IT培训
+企业级it培训
 传感器网
 信任状
 信息价值链
 关联错误
 冗余服务器
 准公平性
-分布式FRA
+分布式fra
 分布式仪器系统
 分布式认知
 分拆式
@@ -14258,7 +14258,7 @@ XML文档树
 多包传输
 多维学习
 学科信息门户
-实时荧光定量PCR技术
+实时荧光定量pcr技术
 密码钥
 常规监测系统
 应用技术大学
@@ -14299,11 +14299,11 @@ XML文档树
 生命环境观
 用户满意指数
 电子毕业纪念册
-移动Agent服务器
+移动agent服务器
 移动对象数据库
 稳健水印
 空间信息网格
-纯XML数据库
+纯xml数据库
 织女星网格
 经济资源联盟体
 网格入口
@@ -14324,7 +14324,7 @@ XML文档树
 视觉空间智能
 视频采样
 计算机科学的数学基础
-语义Web
+语义web
 超级绝热材料
 软件抗衰
 软件服务商
