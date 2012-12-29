@@ -1,12 +1,11 @@
 package tjx.trs.run;
 
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
-
-import javax.swing.plaf.basic.BasicScrollPaneUI.HSBChangeListener;
 
 import love.cq.domain.Forest;
 import love.cq.library.Library;
@@ -41,7 +40,21 @@ public class QueryDemo {
 			hs.add(sortMapByValue.get(i).getKey()) ;
 		}
 		
-		IOUtil.getReader("data\\csdn_class.txt", "UTF-8");
+		
+		
+		reader = IOUtil.getReader("data\\csdn_class.txt", "UTF-8");
+		
+		 FileOutputStream fos = new FileOutputStream("data\\csdn_class.new.txt");
+		while((temp=reader.readLine())!=null){
+			if(hs.contains(temp.split("\t")[0])){
+				continue ;
+			}else{
+				fos.write(temp.getBytes()) ;
+				fos.write("\n".getBytes()) ;
+			}
+		}
+		fos.flush() ;
+		fos.close() ;
 		
 		
 		// FileOutputStream fos = new
