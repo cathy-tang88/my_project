@@ -9,6 +9,7 @@ import love.cq.domain.Forest;
 import love.cq.library.Library;
 import love.cq.splitWord.GetWord;
 import love.cq.util.IOUtil;
+import tjx.trs.pojo.Person;
 import tjx.trs.util.CollectionUtil;
 
 public class Selectuser {
@@ -23,11 +24,12 @@ public class Selectuser {
 			String[] split = temp.split("\t");
 			count++;
 			getWord = new GetWord(forest, split[2]);
-			while ((temp = getWord.getFrontWords()) != null) {
+			
+			while ((temp = getWord.getFrontWords()) != null) {//why?
 				if (hm.containsKey(temp)) {
 					hm.put(temp, hm.get(temp) + 1);
 				} else {
-					hm.put(temp, 2);
+					hm.put(temp, 2);//why平滑？
 				}
 			}
 
@@ -36,7 +38,7 @@ public class Selectuser {
 		//补录为0的东西
 		BufferedReader reader2 = IOUtil.getReader("data/csdn_class.txt", "UTF-8") ;
 		while((temp=reader2.readLine())!=null){
-			String[] split = temp.split("\t");
+			String[] split = temp.toLowerCase().split("\t");
 			if(!hm.containsKey(split[0])){
 				hm.put(split[0], 1) ;
 			}
@@ -45,11 +47,14 @@ public class Selectuser {
 		System.out.println("总数" + count);
 		StringBuilder sb = new StringBuilder();
 		List<Entry<String, Integer>> sortMapByValue = CollectionUtil.sortMapByValue(hm, 1) ;
+		
 		for (Entry<String, Integer> entry : sortMapByValue) {
-			sb.append(entry.getKey()+"\t"+entry.getValue()) ;
+			sb.append(entry.getKey()+"\t"+entry.getValue()+"\t"+Math.log(((double)609568)/(double)entry.getValue())) ;
 			sb.append("\n") ;
 		}
 		IOUtil.Writer("data/word_freq.txt", "UTF-8", sb.toString()) ;
+		
+		
 	}
 	
 }
