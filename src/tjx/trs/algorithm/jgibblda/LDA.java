@@ -35,7 +35,7 @@ public class LDA {
 	public static void main(String args[]) {
 		// 输入命令字符串数组
 		// 训练
-		String[] cmd = { "-est", "-alpha", "0.5", "-beta", "0.1", "-ntopics", "50", "-niters", "20", "-savestep", "2", "-twords", "20", "-dir","lda/" ,"-dfile",
+		String[] cmd = { "-est", "-alpha", "0.5", "-beta", "0.1", "-ntopics", "10", "-niters", "20", "-savestep", "2", "-twords", "20", "-dir","lda/" ,"-dfile",
 				"LDA.txt" };
 		// 测试
 		// String[] cmd = {"-inf","-dir", "D://", "-model", "model-final",
