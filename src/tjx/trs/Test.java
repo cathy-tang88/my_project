@@ -18,10 +18,10 @@ public class Test {
 		StringBuilder sb = new StringBuilder() ;
 		while((temp=reader.readLine())!=null){
 			id++ ;
-			sb.append(id+"\t"+temp.split("\t")[0]);
+			sb.append(temp.split("\t")[0]+"\t"+id);
 			sb.append("\n") ;
 		}
 		
-		IOUtil.Writer("lda/wordmap.txt", "utf-8", sb.toString()) ;
+		IOUtil.Writer("data/library.dic", "utf-8", sb.toString()) ;
 	}
 }

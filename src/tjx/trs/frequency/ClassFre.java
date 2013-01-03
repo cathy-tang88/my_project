@@ -6,8 +6,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import tjx.trs.util.CollectionUtil;
+import tjx.trs.util.StaticValue;
 
 import love.cq.domain.Forest;
 import love.cq.library.Library;
@@ -15,87 +17,54 @@ import love.cq.splitWord.GetWord;
 import love.cq.util.IOUtil;
 
 public class ClassFre {
-	public static void main(String[] args) throws Exception{
-		
-		
-		HashMap<String, Integer[]> CATEGORYMAP=new HashMap<String,Integer[]>();
-			BufferedReader reader = IOUtil.getReader("svm/training/ml.txt", "UTF-8");
-			String temp = null;
-			HashMap<String, Integer> hm = new HashMap<String, Integer>();
-			Forest forest = Library.makeForest("data/csdn_class.txt");
-			GetWord getWord = null;
-		
+	public static void main(String[] args) throws Exception {
+
+		HashMap<String, Integer[]> dicMap = new HashMap<String, Integer[]>();
+		String temp = null;
+		Forest forest = Library.makeForest("data/csdn_class.txt");
+		GetWord getWord = null;
+
+		Set<Entry<String, Integer>> entrySet = StaticValue.CATEGORYMAP.entrySet();
+		int categorySize = StaticValue.CATEGORYMAP.size();
+		Integer[] ints = null ;
+		for (Entry<String, Integer> entry : entrySet) {
+			BufferedReader reader = IOUtil.getReader("data/training/" + entry.getKey() + ".txt", "UTF-8");
 			while ((temp = reader.readLine()) != null) {
-				
 				getWord = new GetWord(forest, temp);
-				
 				while ((temp = getWord.getFrontWords()) != null) {
-					if (hm.containsKey(temp)) {
-						hm.put(temp, hm.get(temp) + 1);
+					if (dicMap.containsKey(temp)) {
+						ints = dicMap.get(temp);
+						int index = entry.getValue() - 1 ;
+						if(ints[index]==null){
+							ints[index] =1 ;
+						}else{
+							ints[index]++ ;
+						}
 					} else {
-						hm.put(temp, 1);
+						dicMap.put(temp, new Integer[categorySize]);
+						dicMap.get(temp)[entry.getValue() - 1] = 1;
 					}
 				}
 
 			}
-			
-			BufferedReader reader1 = IOUtil.getReader("svm/training/cloud.txt", "UTF-8");
-			String temp1 = null;
-			HashMap<String, Integer> hm1 = new HashMap<String, Integer>();
-			
-		
-			while ((temp1 = reader.readLine()) != null) {
-				
-				getWord = new GetWord(forest, temp1);
-				
-				while ((temp1= getWord.getFrontWords()) != null) {
-					if (hm1.containsKey(temp1)) {
-						hm1.put(temp1, hm1.get(temp1) + 1);
-					} else {
-						hm1.put(temp1, 1);
-					}
-				}
-
-			}
-			
-			BufferedReader reader2 = IOUtil.getReader("data/csdn_class.txt", "UTF-8") ;
-			while((temp=reader2.readLine())!=null){
-				String[] split = temp.toLowerCase().split("\t");
-				if(!hm.containsKey(split[0])){
-					hm.put(split[0], 1) ;
-				}
-			}
-			
-		
-			StringBuilder sb = new StringBuilder();
-			List<Entry<String, Integer>> sortMapByValue = CollectionUtil.sortMapByValue(hm, 1) ;
-			
-			for (Entry<String, Integer> entry : sortMapByValue) {
-				sb.append(entry.getKey()+"\t"+entry.getValue()) ;
-				String word=entry.getKey();
-				Integer freq=entry.getValue();
-				if(!CATEGORYMAP.containsKey(word))
-				{
-					Integer[] tempFreq=new Integer[9];
-					CATEGORYMAP.put(word, tempFreq);
-				}
-				CATEGORYMAP.get(word)[4]=freq;
-				
-				sb.append("\n") ;
-			}
-			//IOUtil.Writer("data/word.txt", "UTF-8", sb.toString()) ;
-
-			Iterator it=CATEGORYMAP.entrySet().iterator();
-			while(it.hasNext())
-			{
-				Map.Entry<String, Integer[]> entry=(Map.Entry<String, Integer[]>)it.next();
-				System.out.println(entry.getKey());
-				System.out.print("\t");
-				for (Integer i : entry.getValue()) {
-					System.out.print(i+" ");
-				}
-				System.out.println();
-			}
-			
 		}
+
+		StringBuilder sb = new StringBuilder();
+
+		Set<Entry<String, Integer[]>> sortMapByValue = dicMap.entrySet();
+
+		for (Entry<String, Integer[]> entry : sortMapByValue) {
+			sb.append(entry.getKey());
+			Integer[] value = entry.getValue();
+			for (Integer integer : value) {
+				if (integer == null) {
+					integer = 0;
+				}
+				sb.append("\t" + integer);
+			}
+			sb.append("\n");
+		}
+		IOUtil.Writer("data/word.txt", "UTF-8", sb.toString());
+
+	}
 }
