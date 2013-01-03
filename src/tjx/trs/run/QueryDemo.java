@@ -44,8 +44,8 @@ public class QueryDemo {
 	
 	public static  void clearnWord()throws Exception{
 		filter("aa");
-		//	BufferedReader reader = IOUtil.getReader("D:\\语料\\SogouQ\\filter.txt", "UTF-8");
-			BufferedReader reader = IOUtil.getReader("D:\\语料\\SogouQ\\all.txt", "UTF-8");
+			BufferedReader reader = IOUtil.getReader("D:\\语料\\SogouQ\\filter.txt", "UTF-8");
+		//	BufferedReader reader = IOUtil.getReader("D:\\语料\\SogouQ\\all.txt", "UTF-8");
 			String temp = null;
 			HashMap<String, Integer> hMap = new HashMap<String, Integer>();
 			while ((temp = reader.readLine()) != null) {
@@ -66,7 +66,7 @@ public class QueryDemo {
 			List<Entry<String, Integer>> sortMapByValue = CollectionUtil.sortMapByValue(hMap, 1);
 			HashSet<String> hs = new HashSet<String>();
 			for (int i = 0; i < 300; i++) {
-				System.out.println(sortMapByValue.get(i));
+			System.out.println(sortMapByValue.get(i));
 				//hs.add(sortMapByValue.get(i).getKey()) ;
 			}
 			
