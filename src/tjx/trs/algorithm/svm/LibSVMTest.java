@@ -17,7 +17,7 @@ public class LibSVMTest {
 //		String[] trainArgs = {"svm/my-tra"};//directory of training file
 //		String modelFile = svm_train.main(trainArgs);
 //		System.out.println(modelFile);
-		String[] testArgs = {"svm/my-tra-test", "svm/my-tra.model", "svm/my-tra-result"};//directory of test file, model file, result file
+		String[] testArgs = {"svm/my-tra", "svm/my-tra.model", "svm/my-tra-result"};//directory of test file, model file, result file
 		Double accuracy = svm_predict.main(testArgs);
 		System.out.println("SVM Classification is done! The accuracy is " + accuracy);
 		

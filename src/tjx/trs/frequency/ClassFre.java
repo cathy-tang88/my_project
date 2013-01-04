@@ -2,19 +2,14 @@ package tjx.trs.frequency;
 
 import java.io.BufferedReader;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
-import tjx.trs.util.CollectionUtil;
-import tjx.trs.util.StaticValue;
 
 import love.cq.domain.Forest;
 import love.cq.library.Library;
 import love.cq.splitWord.GetWord;
 import love.cq.util.IOUtil;
+import tjx.trs.util.StaticValue;
 
 public class ClassFre {
 	public static void main(String[] args) throws Exception {
@@ -26,7 +21,7 @@ public class ClassFre {
 
 		Set<Entry<String, Integer>> entrySet = StaticValue.CATEGORYMAP.entrySet();
 		int categorySize = StaticValue.CATEGORYMAP.size();
-		Integer[] ints = null ;
+		Integer[] ints = null;
 		for (Entry<String, Integer> entry : entrySet) {
 			BufferedReader reader = IOUtil.getReader("data/training/" + entry.getKey() + ".txt", "UTF-8");
 			while ((temp = reader.readLine()) != null) {
@@ -34,11 +29,11 @@ public class ClassFre {
 				while ((temp = getWord.getFrontWords()) != null) {
 					if (dicMap.containsKey(temp)) {
 						ints = dicMap.get(temp);
-						int index = entry.getValue() - 1 ;
-						if(ints[index]==null){
-							ints[index] =1 ;
-						}else{
-							ints[index]++ ;
+						int index = entry.getValue() - 1;
+						if (ints[index] == null) {
+							ints[index] = 1;
+						} else {
+							ints[index]++;
 						}
 					} else {
 						dicMap.put(temp, new Integer[categorySize]);

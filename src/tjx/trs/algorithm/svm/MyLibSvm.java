@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 import libsvm.svm;
 import libsvm.svm_model;
@@ -32,12 +33,11 @@ int success = 0  ;
 				kv =string.split(":") ;
 				hm.put(Integer.parseInt(kv[0]), Integer.parseInt(kv[1])) ;
 			}
-			double findCategory = findCategory(hm) ;
+			double findCategory = findCategory(new TreeMap<Integer, Integer>(hm)) ;
 			if(findCategory==categoryId){
 				success++ ;
 			}
 		}
-System.out.println(success/(double)all);
 	}
 
 	private static svm_model model = null;
@@ -56,7 +56,7 @@ System.out.println(success/(double)all);
 	 * @param record
 	 * @return
 	 */
-	public static double findCategory(Map<Integer,Integer> record) {
+	public static double findCategory(TreeMap<Integer,Integer> record) {
 		return predictPerRecord(record, model) ;
 	}
 	

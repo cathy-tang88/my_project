@@ -8,6 +8,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 import love.cq.domain.Forest;
 import love.cq.library.Library;
@@ -41,6 +42,10 @@ public class LibSvmTrainMaker {
 		//进行模型训练
 		String[] trainArgs = {"svm/my-tra"};//directory of training file
 		svm_train.main(trainArgs);
+		
+		//测试准确率
+		MyLibSvm.main(null) ;
+		
 	}
 
 	static OutputStream os = null;
@@ -75,9 +80,10 @@ static int size = 0 ;
 			makeFrequeMap(hm, gw);
 			if (hm.size() > 0) {
 				sb.append(categoryId + "  ");
-				Set<Entry<Integer, Integer>> entrySet = hm.entrySet();
+				TreeMap<Integer, Integer> treemap = new TreeMap<Integer,Integer>(hm);
+				Set<Entry<Integer, Integer>> entrySet = treemap.entrySet();
 				for (Entry<Integer, Integer> entry : entrySet) {
-					sb.append(entry.getKey() + ":" + entry.getValue() + " ");
+					sb.append(entry.getKey() + ":" + 1 + " ");
 				}
 				sb.append("14030:-1\n");
 				os.write(sb.toString().getBytes());
