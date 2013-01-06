@@ -13,7 +13,8 @@ import tjx.trs.util.StaticValue;
 
 public class ClassFre {
 	public static void main(String[] args) throws Exception {
-
+       //¼ÆËã»úµÄ´ÊÆµ
+		HashMap<String,Double> computer=new HashMap<String, Double>();
 		HashMap<String, Integer[]> dicMap = new HashMap<String, Integer[]>();
 		String temp = null;
 		Forest forest = Library.makeForest("data/csdn_class.txt");
@@ -27,8 +28,16 @@ public class ClassFre {
 			while ((temp = reader.readLine()) != null) {
 				getWord = new GetWord(forest, temp);
 				while ((temp = getWord.getFrontWords()) != null) {
-					if (dicMap.containsKey(temp)) {
+				        if(computer.containsKey(temp)){
+				        	computer.put(temp, (double)((computer.get(temp)+1)/458606));
+				        }
+				        else{
+				        	computer.put(temp, (double) (1/458606));
+				        }
+				        
+	/*				if (dicMap.containsKey(temp)) {
 						ints = dicMap.get(temp);
+						
 						int index = entry.getValue() - 1;
 						if (ints[index] == null) {
 							ints[index] = 1;
@@ -38,8 +47,9 @@ public class ClassFre {
 					} else {
 						dicMap.put(temp, new Integer[categorySize]);
 						dicMap.get(temp)[entry.getValue() - 1] = 1;
-					}
+					}*/
 				}
+				
 
 			}
 		}
@@ -55,11 +65,12 @@ public class ClassFre {
 				if (integer == null) {
 					integer = 0;
 				}
-				sb.append("\t" + integer);
+				
+				sb.append("\t" + (integer));
 			}
 			sb.append("\n");
 		}
-		IOUtil.Writer("data/word.txt", "UTF-8", sb.toString());
-
+	//	IOUtil.Writer("data/word.txt", "UTF-8", sb.toString());
+	//	IOUtil.Writer("data/Computer/ComputerFre.txt", "UTF-8", sb.toString());
 	}
 }

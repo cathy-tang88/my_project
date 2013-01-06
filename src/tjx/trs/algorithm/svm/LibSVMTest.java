@@ -21,7 +21,7 @@ public class LibSVMTest {
 		Double accuracy = svm_predict.main(testArgs);
 		System.out.println("SVM Classification is done! The accuracy is " + accuracy);
 		
-		//Test for cross validation
+		//Test for cross validationfi
 		//String[] crossValidationTrainArgs = {"-v", "10", "UCI-breast-cancer-tra"};// 10 fold cross validation
 		//modelFile = svm_train.main(crossValidationTrainArgs);
 		//System.out.print("Cross validation is done! The modelFile is " + modelFile);
