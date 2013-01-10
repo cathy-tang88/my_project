@@ -19,25 +19,29 @@ import love.cq.util.IOUtil;
 public class QueryDemo {
 	public static void main(String[] args) throws Exception {
 
-		 FileOutputStream fos = new
-		 FileOutputStream("D:\\语料\\SogouQ\\filter.txt");
-		File[] files = new File("D:\\语料\\SogouQ\\all").listFiles();
+		// FileOutputStream fos = new FileOutputStream("D:\\语料\\SogouQ\\filter.txt");
+		 FileOutputStream fos = new FileOutputStream("D:\\语料\\SogouQ\\filter1.txt");
+	/*	File[] files = new File("D:\\语料\\SogouQ\\all").listFiles();
 		for (int i = 0; i < files.length; i++) {
 			if (!files[i].canRead() || !files[i].getName().endsWith("sogou")) {
 				continue;
 			}
-			BufferedReader reader = IOUtil.getReader(new FileInputStream(files[i]), "GBK");
+			BufferedReader reader = IOUtil.getReader(new FileInputStream(files[i]), "GBK");*/
+			BufferedReader reader = IOUtil.getReader(new FileInputStream("D:\\训练集\\日志.txt"), "GBK");
 			String temp = null;
-
+      
 			while ((temp = reader.readLine()) != null) {
+				
 				String[] split = temp.toLowerCase().split("\t");
-				if (filter(split[2])) {
+				
+				if (split.length>3&&filter(split[2])) {
+					System.out.println();
 					fos.write(temp.getBytes());
 					fos.write("\n".getBytes());
 //					System.out.println(temp);
 				}
 			}
-		}
+	//	}
 		fos.flush();
 		 fos.close();
 	}
@@ -74,7 +78,7 @@ public class QueryDemo {
 	}
 
 	private static Forest forest = null;
-	static HashMap<String, Integer> ncomputerFre = new HashMap<String, Integer>();//非计算机领域的每个词词频
+
 
 
 	public static boolean filter(String query) throws Exception {
@@ -96,7 +100,7 @@ public class QueryDemo {
 			tempAllFreq = Integer.parseInt(gw.getParam(2)) ;
 			size ++ ;
 		}
-		//如果只分出一个词语。并且这个词的other频率 大禹1000 那么这个串串我们夜抛弃掉  这样 婚姻匹配	0.946122608833829 这种词就不会出现了 
+		//如果只分出一个词语。并且这个词的other频率 大于1000 那么这个串串我们夜抛弃掉  这样 婚姻匹配	0.946122608833829 这种词就不会出现了 
 		if(size==1&&tempAllFreq>1000){
 			return false ;
 		}

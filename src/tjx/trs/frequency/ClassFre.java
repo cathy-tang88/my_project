@@ -14,7 +14,7 @@ import tjx.trs.util.StaticValue;
 public class ClassFre {
 	public static void main(String[] args) throws Exception {
        //¼ÆËã»úµÄ´ÊÆµ
-		HashMap<String,Double> computer=new HashMap<String, Double>();
+	
 		HashMap<String, Integer[]> dicMap = new HashMap<String, Integer[]>();
 		String temp = null;
 		Forest forest = Library.makeForest("data/csdn_class.txt");
@@ -28,12 +28,7 @@ public class ClassFre {
 			while ((temp = reader.readLine()) != null) {
 				getWord = new GetWord(forest, temp);
 				while ((temp = getWord.getFrontWords()) != null) {
-				        if(computer.containsKey(temp)){
-				        	computer.put(temp, (double)((computer.get(temp)+1)/458606));
-				        }
-				        else{
-				        	computer.put(temp, (double) (1/458606));
-				        }
+				      
 				        
 	/*				if (dicMap.containsKey(temp)) {
 						ints = dicMap.get(temp);

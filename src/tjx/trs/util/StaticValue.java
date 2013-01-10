@@ -1,9 +1,16 @@
 package tjx.trs.util;
 
+import java.io.BufferedReader;
 import java.util.HashMap;
+import java.util.HashSet;
+
+import org.ansj.util.newWordFind.NewTerm;
+
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 import love.cq.domain.Forest;
 import love.cq.library.Library;
+import love.cq.util.IOUtil;
 
 /**
  * 储存了一些静态变量
@@ -22,6 +29,9 @@ public class StaticValue {
 	private static Forest forestId = null;
 
 	private static Forest forest = null;
+	
+	
+	public static HashSet<String> STOP= new HashSet<String>() ;
 
 	static {
 		CATEGORYMAP.put("cloud", 1);
@@ -47,6 +57,12 @@ public class StaticValue {
 		try {
 			forestId = Library.makeForest("data/library.dic");
 			forest = Library.makeForest("data/csdn_class.txt");
+			
+			BufferedReader reader = IOUtil.getReader("data/newWordFilter.dic", "UTF-8") ;
+			String temp = null ;
+			while((temp=reader.readLine())!=null){
+				STOP.add(temp.toLowerCase()) ;
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

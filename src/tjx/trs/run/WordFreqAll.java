@@ -5,13 +5,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 import java.util.Map.Entry;
+
+import org.ansj.domain.Term;
+import org.ansj.splitWord.analysis.ToAnalysis;
 
 import com.alibaba.fastjson.JSONObject;
 
 import love.cq.domain.Forest;
-import love.cq.library.Library;
 import love.cq.splitWord.GetWord;
 import love.cq.util.IOUtil;
 import love.cq.util.StringUtil;
@@ -27,24 +30,25 @@ public class WordFreqAll {
 		BufferedReader reader = IOUtil.getReader("data/csdn_class.txt", "UTF-8");
 		String temp = null;
 		HashMap<String, WordFreq> hm = new HashMap<String, WordFreq>();
-		String[] strings = null;
-		WordFreq value = null;
-		while ((temp = reader.readLine()) != null) {
-			strings = temp.split("\t");
-			value = new WordFreq();
-			hm.put(strings[0], value);
-		}
+//		String[] strings = null;
+//		WordFreq value = null;
+//		while ((temp = reader.readLine()) != null) {
+//			strings = temp.split("\t");
+//			value = new WordFreq();
+//			hm.put(strings[0], value);
+//		}
 		File[] files = null ;
 		Set<Entry<String, Integer>> entrySet = StaticValue.CATEGORYMAP.entrySet();
 		for (Entry<String, Integer> entry : entrySet) {
 			BufferedReader reader2 = IOUtil.getReader("data/training/" + entry.getKey() + ".txt", "UTF-8");
 			while ((temp = reader2.readLine()) != null) {// zheli cuxin le hehe
-				setFreq(hm, temp, 1);
+				setFreqSeg(hm, temp, 1);
 			}
 		}
 
 		// other word freq
 		files = new File("D:\\”Ô¡œ\\SogouQ\\all").listFiles();
+	
 		for (int i = 0; i < files.length; i++) {
 			if (!files[i].canRead() || !files[i].getName().endsWith("sogou")) {
 				continue;
@@ -54,7 +58,9 @@ public class WordFreqAll {
 			while ((temp = reader2.readLine()) != null) {
 				String[] split = temp.toLowerCase().split("\t");
 				temp = split[2];
-				setFreq(hm, temp, 0);
+				if(!Recall.filter(temp.toLowerCase())){
+					setFreqSeg(hm, temp, 0);
+				}
 			}
 		}
 		
@@ -70,7 +76,7 @@ public class WordFreqAll {
 				File[] allFiles = files[i].listFiles() ;
 				for (File file : allFiles) {
 					if(file.getName().toLowerCase().endsWith(".txt")&&file.canRead()){
-						setFreq(hm, MyIOUtil.getContent(file), status);
+						setFreqSeg(hm, MyIOUtil.getContent(file), status);
 					}
 				}
 			}
@@ -85,7 +91,7 @@ public class WordFreqAll {
 				for (File file : allFiles) {
 					if(file.getName().toLowerCase().endsWith(".txt")&&file.canRead()){
 						JSONObject jObject = JSONObject.parseObject(MyIOUtil.getContent(file))  ;
-						setFreq(hm, StringUtil.rmHtmlTag(jObject.getString("content")), status);
+						setFreqSeg(hm, StringUtil.rmHtmlTag(jObject.getString("content")), status);
 					}
 				}
 			}
@@ -107,22 +113,49 @@ public class WordFreqAll {
 			sb.append("\n");
 			id++;
 		}
-		FileOutputStream fos = new FileOutputStream(new File("data/library.dic"));
+	FileOutputStream fos = new FileOutputStream(new File("data/library.dic"));
+		
 		fos.write(sb.toString().getBytes("UTF-8"));
 		fos.flush();
 		fos.close();
 	}
 
-	private static void setFreq(HashMap<String, WordFreq> hm, String temp, int status) {
-		// TODO Auto-generated method stub
-		GetWord gWord = new GetWord(FOREST, temp);
-		String key = null;
-		while ((key = gWord.getFrontWords()) != null) {
-			if (status == 0) {
-				hm.get(key).setOtherValue(1) ;
-			} else {
-				hm.get(key).setComputerValue(1);
+//	private static void setFreq(HashMap<String, WordFreq> hm, String temp, int status) {
+//		// TODO Auto-generated method stub
+//		GetWord gWord = new GetWord(FOREST, temp);
+//		String key = null;
+//		while ((key = gWord.getFrontWords()) != null) {
+//			if (status == 0) {
+//				hm.get(key).setOtherValue(1) ;
+//			} else {
+//				hm.get(key).setComputerValue(1);
+//			}
+//		}
+//	}
+		
+		
+		private static void setFreqSeg(HashMap<String, WordFreq> hm, String temp, int status) {
+			// TODO Auto-generated method stub
+			List<Term> paser = ToAnalysis.paser(temp) ;
+			
+			String name = null ;
+			for (Term term : paser) {
+				name = term.getName() ;
+				if(StaticValue.STOP.contains(name)){
+					continue ;
+				}
+				WordFreq wFreq = null ;
+				if((wFreq=hm.get(name))==null){
+					wFreq = new WordFreq() ;
+					hm.put(name, wFreq) ;
+				}
+				
+				if (status == 0) {
+					wFreq.setOtherValue(1) ;
+				} else {
+					wFreq.setComputerValue(1);
+				}
+				
 			}
-		}
 	}
 }
