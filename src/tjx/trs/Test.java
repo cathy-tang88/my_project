@@ -10,7 +10,7 @@ import love.cq.library.Library;
 import love.cq.splitWord.GetWord;
 import love.cq.util.IOUtil;
 
-public class Test {
+public class Test { 
 	public static void main(String[] args) throws Exception {
 		BufferedReader reader = IOUtil.getReader("data/csdn_class.txt", "UTF-8") ;
 		String temp = null ;

@@ -6,6 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+import tjx.trs.pojo.URLScore;
+import tjx.trs.util.StaticValue;
+
 import love.cq.domain.Forest;
 import love.cq.library.Library;
 import love.cq.splitWord.GetWord;
@@ -13,29 +16,32 @@ import love.cq.util.IOUtil;
 
 public class Recall {
 	public static void main(String[] args) throws IOException, Exception {
-		BufferedReader reader = IOUtil.getReader(new FileInputStream("D:\\训练集\\xx.txt"), "GBK");
+		BufferedReader reader = IOUtil.getReader(new FileInputStream("D:\\训练集\\url正确.txt"), "GBK");
 		String temp = null;
 		int success = 0;
 		while ((temp = reader.readLine()) != null) {
 
-			// String[] split = temp.toLowerCase().split("\t");
+			String[] split = temp.toLowerCase().split("\t");
+			//System.out.println(split[1]);
 
-			if (filter(temp.toLowerCase())) {
+			if (filter(temp.toLowerCase(),split[1])) {
+				//System.out.println(split[1]);
 				success++;
+				
 			}else{
-				//System.out.println(temp);
+				System.out.println(split[0]+":"+split[1]);
 			}
 		}
-		
+	//	System.out.println(success);
 		int error = 0;
 		reader = IOUtil.getReader(new FileInputStream("D:\\训练集\\错误的样本.txt"), "GBK");
 		while ((temp = reader.readLine()) != null) {
 			// System.out.println(temp);
 			String[] split = temp.toLowerCase().split("\t");
 
-			if (filter(split[2])) {
+			if (filter(split[2].toLowerCase(),split[5].toLowerCase())) {
 				error++;
-				System.out.println(split[2]);
+				//System.out.println(split[2]+":"+split[5]);
 			}
 		}
 		 Double R=((double) success / 500);
@@ -48,7 +54,7 @@ public class Recall {
 
 	private static Forest forest = null;
 
-	public static boolean filter(String query) throws Exception {
+	public static boolean filter(String query,String url) throws Exception {
 		if (forest == null) {
 			forest = Library.makeForest("data/library.dic");
 			// forest = Library.makeForest(IOUtil.getReader("data/计算机与自动化.txt",
@@ -72,7 +78,14 @@ public class Recall {
 	
 		double p = pe1 / (pe1 + pe2);
 		
-
+		URLScore us = StaticValue.getUrlScore(url) ;
+		
+		//wo xian cou he xie a  
+		if(us!=null&&us.score>0.8&&us.computer>2){
+		//	System.out.println(query);
+			return true ;
+		}
+		
 		if (size == 0) {
 			return false;
 		}

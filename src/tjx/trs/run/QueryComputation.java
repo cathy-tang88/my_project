@@ -1,11 +1,15 @@
 package tjx.trs.run;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
+
+import tjx.trs.util.StaticValue;
 
 import love.cq.util.IOUtil;
 
@@ -13,16 +17,17 @@ public class QueryComputation {
 	public static void main(String[] args) throws IOException {
 
 		HashMap<String, Integer[]> result = new HashMap<String, Integer[]>();
-
-		// ç»Ÿè®¡è®¡ç®—æœºç±»çš„åŸŸå
-		BufferedReader reader = IOUtil.getReader("D:\\è¯­æ–™\\SogouQ\\filter.txt", "UTF-8");
+		int allComputer = 0;
+		int allOther = 0;
+		// Í³¼Æ¼ÆËã»úÀàµÄÓòÃû
+		BufferedReader reader = IOUtil.getReader("D:\\ÓïÁÏ\\SogouQ\\filter.txt", "UTF-8");
 		String temp = null;
 		String domain = null;
 		Integer[] values = null;
 		while ((temp = reader.readLine()) != null) {
 			String[] split = temp.toLowerCase().split("\t");
-			domain = getDomain(split[5]).toLowerCase();
-
+			domain = StaticValue.getDomain(split[5]).toLowerCase();
+			allComputer++;
 			if ((values = result.get(domain)) == null) {
 				values = new Integer[2];
 				values[0] = 1;
@@ -31,41 +36,63 @@ public class QueryComputation {
 				values[0] += 1;
 			}
 		}
+		reader.close();
+		// Í³¼Æ·Ç¼ÆËã»úÀàµÄÓòÃû
 
-		// ç»Ÿè®¡éè®¡ç®—æœºç±»çš„åŸŸå
-		reader = IOUtil.getReader("D:\\è¯­æ–™\\SogouQ\\all.txt", "UTF-8");
-		while ((temp = reader.readLine()) != null) {
-			String[] split = temp.toLowerCase().split("\t");
-			domain = getDomain(split[5]).toLowerCase();
+		File[] files = new File("D:\\ÓïÁÏ\\SogouQ\\all").listFiles();
 
-			if ((values = result.get(domain)) == null) {
+		for (int i = 0; i < files.length; i++) {
+			if (!files[i].canRead() || !files[i].getName().endsWith("sogou")) {
 				continue;
 			}
 
-			if (values[1] == null) {
-				values[1] = 1;
-			} else {
-				values[1] += 1;
+			reader = IOUtil.getReader(new FileInputStream(files[i]), "UTF-8");
+			while ((temp = reader.readLine()) != null) {
+				String[] split = temp.toLowerCase().split("\t");
+				domain = StaticValue.getDomain(split[5]).toLowerCase();
+
+				if ((values = result.get(domain)) == null) {
+					continue;
+				}
+				allOther++;
+				if (values[1] == null) {
+					values[1] = 1;
+				} else {
+					values[1] += 1;
+				}
 			}
+			reader.close();
+
 		}
-		
-		
-		StringBuilder sb = new StringBuilder() ;
-		Set<Entry<String, Integer[]>> entrySet = result.entrySet() ;
+
+		StringBuilder sb = new StringBuilder();
+		Set<Entry<String, Integer[]>> entrySet = result.entrySet();
+		int computer = 0;
+		int other = 0;
+		double score = 0  ;
 		for (Entry<String, Integer[]> entry : entrySet) {
-			sb.append(entry.getKey()) ;
-			sb.append("\t") ;
-			sb.append(entry.getValue()[0]==null?0:entry.getValue()[0]) ;
-			sb.append("\t") ;
-			sb.append(entry.getValue()[1]==null?0:entry.getValue()[1]) ;
-			sb.append("\n") ;
+			computer = entry.getValue()[0] == null ? 0 : entry.getValue()[0];
+			computer+=1 ;
+			other = entry.getValue()[1] == null ? 0 : (entry.getValue()[1] - computer)+1;
+			other+=1 ;
+			score =  (computer/(double)allComputer)/((computer/(double)allComputer)+(other/(double)allOther)) ;
+			System.out.println(computer);
+			System.out.println(other);
+			System.out.println(score);
+			
+			sb.append(entry.getKey());
+			sb.append("\t");
+			sb.append(computer);
+			sb.append("\t");
+			sb.append(other);
+			sb.append("\t");
+			sb.append(score);
+			sb.append("\n");
 		}
-		
-		IOUtil.Writer("data/domainScore.txt", "UTF-8", sb.toString()) ;
-		
+
+		IOUtil.Writer("data/domainScore.txt", "UTF-8", sb.toString());
+
 	}
 
-	public static String getDomain(String url) {
-		return url.split("//")[1].split("/")[0];
-	}
+	
 }

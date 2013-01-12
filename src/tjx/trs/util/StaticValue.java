@@ -1,10 +1,13 @@
 package tjx.trs.util;
 
 import java.io.BufferedReader;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.HashSet;
 
 import org.ansj.util.newWordFind.NewTerm;
+
+import tjx.trs.pojo.URLScore;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
@@ -25,6 +28,8 @@ public class StaticValue {
 	public static final HashMap<String, Integer> CATEGORYMAP = new HashMap<String, Integer>();
 
 	public static final HashMap<Integer, String> CATEGORYIDMAP = new HashMap<Integer, String>();
+	
+	public static final HashMap<String, URLScore> URLMAP = new HashMap<String, URLScore>();
 
 	private static Forest forestId = null;
 
@@ -67,6 +72,22 @@ public class StaticValue {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		try {
+			BufferedReader reader = IOUtil.getReader("data/domainScore.txt", "UTF-8") ;
+			String temp = null ;
+			String[]  strs = null ;
+			URLScore uScore = null ;
+			while((temp=reader.readLine())!=null){
+				strs = temp.split("\t") ;
+				uScore = new URLScore(Integer.parseInt(strs[1]), Integer.parseInt(strs[2]), Double.parseDouble(strs[3])) ;
+				URLMAP.put(strs[0].toLowerCase(), uScore) ;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static Forest getForestId() {
@@ -75,5 +96,16 @@ public class StaticValue {
 
 	public static Forest getForest() {
 		return forest;
+	}
+
+	public static URLScore getUrlScore(String url) {
+		// TODO Auto-generated method stub
+		String domain = getDomain(url) ;
+		return URLMAP.get(domain) ;
+		
+	}
+	
+	public static String getDomain(String url) {
+		return url.split("//")[1].split("/")[0];
 	}
 }

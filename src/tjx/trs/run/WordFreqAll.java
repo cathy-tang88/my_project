@@ -58,7 +58,7 @@ public class WordFreqAll {
 			while ((temp = reader2.readLine()) != null) {
 				String[] split = temp.toLowerCase().split("\t");
 				temp = split[2];
-				if(!Recall.filter(temp.toLowerCase())){
+				if(!Recall.filter(temp.toLowerCase(),split[5].toLowerCase())){
 					setFreqSeg(hm, temp, 0);
 				}
 			}

@@ -20,7 +20,7 @@ public class QueryDemo {
 	public static void main(String[] args) throws Exception {
 
 		// FileOutputStream fos = new FileOutputStream("D:\\语料\\SogouQ\\filter.txt");
-		 FileOutputStream fos = new FileOutputStream("D:\\语料\\SogouQ\\filter1.txt");
+		 FileOutputStream fos = new FileOutputStream("D:\\语料\\SogouQ\\filter.txt");
 	/*	File[] files = new File("D:\\语料\\SogouQ\\all").listFiles();
 		for (int i = 0; i < files.length; i++) {
 			if (!files[i].canRead() || !files[i].getName().endsWith("sogou")) {
@@ -106,7 +106,7 @@ public class QueryDemo {
 		}
 		double p = pe1/(pe1+pe2) ; 
 		
-		if(p>0.87){
+		if(p>0.85){
 			return true;
 		}
 		return false;
