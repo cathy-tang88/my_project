@@ -19,8 +19,8 @@ public class QueryComputation {
 		HashMap<String, Integer[]> result = new HashMap<String, Integer[]>();
 		int allComputer = 0;
 		int allOther = 0;
-		// 统计计算机类的域名
-		BufferedReader reader = IOUtil.getReader("D:\\语料\\SogouQ\\filter.txt", "UTF-8");
+		// 统锟狡硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+		BufferedReader reader = IOUtil.getReader("D:\\璇枡\\SogouQ\\filter.txt", "UTF-8");
 		String temp = null;
 		String domain = null;
 		Integer[] values = null;
@@ -37,9 +37,9 @@ public class QueryComputation {
 			}
 		}
 		reader.close();
-		// 统计非计算机类的域名
+		// 统锟狡非硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 
-		File[] files = new File("D:\\语料\\SogouQ\\all").listFiles();
+		File[] files = new File("D:\\锟斤拷锟斤拷\\SogouQ\\all").listFiles();
 
 		for (int i = 0; i < files.length; i++) {
 			if (!files[i].canRead() || !files[i].getName().endsWith("sogou")) {

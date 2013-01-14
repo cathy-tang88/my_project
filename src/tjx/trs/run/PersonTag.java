@@ -14,7 +14,7 @@ import love.cq.util.IOUtil;
 
 public class PersonTag {
 	public static void main(String[] args) throws Exception {
-		BufferedReader reader = IOUtil.getReader("D:\\”Ô¡œ\\SogouQ\\filter.txt", "UTF-8");
+		BufferedReader reader = IOUtil.getReader("D:\\ËØ≠Êñô\\SogouQ\\filter.txt", "UTF-8");
 		String temp = null;
 		Forest forest = Library.makeForest("data/csdn_class.txt");
 		GetWord getWord = null;

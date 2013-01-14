@@ -16,7 +16,8 @@ import love.cq.util.IOUtil;
 
 public class Recall {
 	public static void main(String[] args) throws IOException, Exception {
-		BufferedReader reader = IOUtil.getReader(new FileInputStream("D:\\ÑµÁ·¼¯\\urlÕıÈ·.txt"), "GBK");
+		BufferedReader reader = IOUtil.getReader(new FileInputStream("D:\\è®­ç»ƒé›†\\urlæ­£ç¡®.txt"), "GBK");
+	
 		String temp = null;
 		int success = 0;
 		while ((temp = reader.readLine()) != null) {
@@ -29,12 +30,13 @@ public class Recall {
 				success++;
 				
 			}else{
-				System.out.println(split[0]+":"+split[1]);
+				//System.out.println(split[0]+":"+split[1]);
 			}
 		}
 	//	System.out.println(success);
 		int error = 0;
-		reader = IOUtil.getReader(new FileInputStream("D:\\ÑµÁ·¼¯\\´íÎóµÄÑù±¾.txt"), "GBK");
+		reader = IOUtil.getReader(new FileInputStream("D:\\è®­ç»ƒé›†\\é”™è¯¯çš„æ ·æœ¬.txt"), "GBK");
+		
 		while ((temp = reader.readLine()) != null) {
 			// System.out.println(temp);
 			String[] split = temp.toLowerCase().split("\t");
@@ -46,10 +48,10 @@ public class Recall {
 		}
 		 Double R=((double) success / 500);
 		 Double P=((double) success / (success + error));
-		 Double F=2*P*R/(P+R);
-		System.out.println("ÕÙ»ØÂÊ=" +R);
-		System.out.println("×¼È·ÂÊ=" +P );
-		System.out.println("FÖµ="+F);
+		 Double F=5*P*R/(5*P+R);
+		System.out.println("å¬å›ç‡=" +R);
+		System.out.println("å‡†ç¡®ç‡=" +P );
+		System.out.println("Få€¼="+F);
 	}
 
 	private static Forest forest = null;
@@ -57,7 +59,7 @@ public class Recall {
 	public static boolean filter(String query,String url) throws Exception {
 		if (forest == null) {
 			forest = Library.makeForest("data/library.dic");
-			// forest = Library.makeForest(IOUtil.getReader("data/¼ÆËã»úÓë×Ô¶¯»¯.txt",
+			// forest = Library.makeForest(IOUtil.getReader("data/è®¡ç®—æœºä¸è‡ªåŠ¨åŒ–.txt",
 			// "UTF-8")) ;
 		}
 		GetWord gw = new GetWord(forest, query);
@@ -73,8 +75,8 @@ public class Recall {
 			tempAllFreq = Integer.parseInt(gw.getParam(2));
 			size++;
 		}
-		// Èç¹ûÖ»·Ö³öÒ»¸ö´ÊÓï¡£²¢ÇÒÕâ¸ö´ÊµÄotherÆµÂÊ ´óÓÚ1000 ÄÇÃ´Õâ¸ö´®´®ÎÒÃÇÒ¹Å×Æúµô ÕâÑù »éÒöÆ¥Åä 0.946122608833829
-		// ÕâÖÖ´Ê¾Í²»»á³öÏÖÁË
+		// å¦‚æœåªåˆ†å‡ºä¸€ä¸ªè¯è¯­ã€‚å¹¶ä¸”è¿™ä¸ªè¯çš„otheré¢‘ç‡ å¤§äº1000 é‚£ä¹ˆè¿™ä¸ªä¸²ä¸²æˆ‘ä»¬å¤œæŠ›å¼ƒæ‰ è¿™æ · å©šå§»åŒ¹é… 0.946122608833829
+		// è¿™ç§è¯å°±ä¸ä¼šå‡ºç°äº†
 	
 		double p = pe1 / (pe1 + pe2);
 		
@@ -90,7 +92,7 @@ public class Recall {
 			return false;
 		}
 
-		if (p > 0.85) {
+		if (p > 0.7) {
 			return true;
 		}
 		return false;

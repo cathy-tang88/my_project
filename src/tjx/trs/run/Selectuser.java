@@ -13,14 +13,16 @@ import tjx.trs.pojo.Person;
 import tjx.trs.util.CollectionUtil;
 
 public class Selectuser {
+	
 	public static void main(String[] args) throws Exception {
-		BufferedReader reader = IOUtil.getReader("D:\\ÓïÁÏ\\SogouQ\\filter.txt", "UTF-8");
+		new Person() ;
+		BufferedReader bod = IOUtil.getReader("D:\\è¯­æ–™\\SogouQ\\filter.txt", "UTF-8");
 		String temp = null;
 		HashMap<String, Integer> hm = new HashMap<String, Integer>();
 		Forest forest = Library.makeForest("data/csdn_class.txt");
 		GetWord getWord = null;
 		int count = 0;
-		while ((temp = reader.readLine()) != null) {
+		while ((temp = bod.readLine()) != null) {
 			String[] split = temp.split("\t");
 			count++;
 			getWord = new GetWord(forest, split[2]);
@@ -29,13 +31,13 @@ public class Selectuser {
 				if (hm.containsKey(temp)) {
 					hm.put(temp, hm.get(temp) + 1);
 				} else {
-					hm.put(temp, 2);//whyÆ½»¬£¿
+					hm.put(temp, 2);//whyå¹³æ»‘ï¼Ÿ
 				}
 			}
 
 		}
 		
-		//²¹Â¼Îª0µÄ¶«Î÷
+		//è¡¥å½•ä¸º0çš„ä¸œè¥¿
 		BufferedReader reader2 = IOUtil.getReader("data/csdn_class.txt", "UTF-8") ;
 		while((temp=reader2.readLine())!=null){
 			String[] split = temp.toLowerCase().split("\t");
@@ -44,9 +46,10 @@ public class Selectuser {
 			}
 		}
 		
-		System.out.println("×ÜÊý" + count);
+		System.out.println("æ€»æ•°" + count);
 		StringBuilder sb = new StringBuilder();
 		List<Entry<String, Integer>> sortMapByValue = CollectionUtil.sortMapByValue(hm, 1) ;
+		
 		
 		for (Entry<String, Integer> entry : sortMapByValue) {
 			sb.append(entry.getKey()+"\t"+entry.getValue()+"\t"+Math.log(((double)609568)/(double)entry.getValue())) ;
@@ -54,7 +57,7 @@ public class Selectuser {
 		}
 		IOUtil.Writer("data/word_freq.txt", "UTF-8", sb.toString()) ;
 		
-		
 	}
+	
 	
 }

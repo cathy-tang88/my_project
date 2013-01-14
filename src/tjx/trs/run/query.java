@@ -14,8 +14,8 @@ public class query {
 
 		HashMap<String, Integer[]> result = new HashMap<String, Integer[]>();
 
-		// 统计计算机类的域名
-		BufferedReader reader = IOUtil.getReader("D:\\语料\\SogouQ\\filter.txt", "UTF-8");
+		// 统锟狡硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+		BufferedReader reader = IOUtil.getReader("D:\\璇枡\\SogouQ\\filter.txt", "UTF-8");
 		String temp = null;
 		String domain = null;
 		Integer[] values = null;
@@ -32,8 +32,8 @@ public class query {
 			}
 		}
 
-		// 统计非计算机类的域名
-		reader = IOUtil.getReader("D:\\语料\\SogouQ\\all.txt", "UTF-8");
+		// 统锟狡非硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+		reader = IOUtil.getReader("D:\\璇枡\\SogouQ\\all.txt", "UTF-8");
 		while ((temp = reader.readLine()) != null) {
 			String[] split = temp.toLowerCase().split("\t");
 			domain = getDomain(split[5]).toLowerCase();

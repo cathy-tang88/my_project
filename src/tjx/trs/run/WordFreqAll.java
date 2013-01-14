@@ -47,7 +47,7 @@ public class WordFreqAll {
 		}
 
 		// other word freq
-		files = new File("D:\\”Ô¡œ\\SogouQ\\all").listFiles();
+		files = new File("D:\\ËØ≠Êñô\\SogouQ\\all").listFiles();
 	
 		for (int i = 0; i < files.length; i++) {
 			if (!files[i].canRead() || !files[i].getName().endsWith("sogou")) {
@@ -65,7 +65,7 @@ public class WordFreqAll {
 		}
 		
 		
-		files = new File("D:\\—µ¡∑ºØ\\∏¥µ©¥Û—ßtc-corpus-train\\train\\").listFiles() ;
+		files = new File("D:\\ËÆ≠ÁªÉÈõÜ\\Â§çÊó¶Â§ßÂ≠¶tc-corpus-train\\train\\").listFiles() ;
 		for (int i = 0; i < files.length; i++) {
 			if(files[i].isDirectory()&&!files[i].isHidden()){
 				
