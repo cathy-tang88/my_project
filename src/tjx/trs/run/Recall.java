@@ -16,8 +16,22 @@ import love.cq.util.IOUtil;
 
 public class Recall {
 	public static void main(String[] args) throws IOException, Exception {
-		BufferedReader reader = IOUtil.getReader(new FileInputStream("D:\\训练集\\url正确.txt"), "GBK");
+		
+		
+		double yuzhi = 0.1 ;
+		
+		for (int i = 0; i < 9; i++) {
+			System.out.print(yuzhi+"\t");
+			math(yuzhi) ;
+			yuzhi = yuzhi+0.1 ;
+		}
+
+	}
 	
+	
+	private static void math(double yuzhi) throws Exception{
+		BufferedReader reader = IOUtil.getReader(new FileInputStream("D:\\训练集\\url正确.txt"), "GBK");
+		
 		String temp = null;
 		int success = 0;
 		while ((temp = reader.readLine()) != null) {
@@ -25,7 +39,7 @@ public class Recall {
 			String[] split = temp.toLowerCase().split("\t");
 			//System.out.println(split[1]);
 
-			if (filter(temp.toLowerCase(),split[1])) {
+			if (filter(temp.toLowerCase(),split[1],yuzhi)) {
 				//System.out.println(split[1]);
 				success++;
 				
@@ -35,28 +49,27 @@ public class Recall {
 		}
 	//	System.out.println(success);
 		int error = 0;
-		reader = IOUtil.getReader(new FileInputStream("D:\\训练集\\错误的样本.txt"), "GBK");
+		reader = IOUtil.getReader(new FileInputStream("D:\\训练集\\url错误.txt"), "GBK");
 		
 		while ((temp = reader.readLine()) != null) {
 			// System.out.println(temp);
 			String[] split = temp.toLowerCase().split("\t");
 
-			if (filter(split[2].toLowerCase(),split[5].toLowerCase())) {
+			if (filter(split[2].toLowerCase(),split[5].toLowerCase(),yuzhi)) {
 				error++;
 				//System.out.println(split[2]+":"+split[5]);
 			}
 		}
 		 Double R=((double) success / 500);
 		 Double P=((double) success / (success + error));
-		 Double F=5*P*R/(5*P+R);
-		System.out.println("召回率=" +R);
-		System.out.println("准确率=" +P );
-		System.out.println("F值="+F);
+		 double b = 0.2 ;
+		 Double F=(b*b+1)*P*R/(b*b*P+R);
+		System.out.println(R+"\t"+P+"\t"+F);
 	}
 
 	private static Forest forest = null;
 
-	public static boolean filter(String query,String url) throws Exception {
+	public static boolean filter(String query,String url,double yuzhi) throws Exception {
 		if (forest == null) {
 			forest = Library.makeForest("data/library.dic");
 			// forest = Library.makeForest(IOUtil.getReader("data/计算机与自动化.txt",
@@ -83,16 +96,16 @@ public class Recall {
 		URLScore us = StaticValue.getUrlScore(url) ;
 		
 		//wo xian cou he xie a  
-		if(us!=null&&us.score>0.8&&us.computer>2){
-		//	System.out.println(query);
-			return true ;
-		}
+//		if(us!=null&&us.score>0.8&&us.computer>2){
+//		//	System.out.println(query);
+//			return true ;
+//		}
 		
 		if (size == 0) {
 			return false;
 		}
 
-		if (p > 0.7) {
+		if (p > yuzhi) {
 			return true;
 		}
 		return false;
